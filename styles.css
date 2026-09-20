@@ -52,3 +52,93 @@ img, svg, video, canvas, audio, iframe, embed, object {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+@keyframes showcaseFadeIn {
+  from {
+    opacity: 0.2;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Directional Module Slide Animations - Ultra Soft & Slower Pace */
+@keyframes slideInRight {
+  from {
+    opacity: 0.15;
+    transform: translateX(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0.15;
+    transform: translateX(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0.15;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0.15;
+    transform: translateY(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.showcase-animated {
+  animation: showcaseFadeIn 0.75s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.showcase-slide-right {
+  animation: slideInRight 1.15s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.showcase-slide-left {
+  animation: slideInLeft 1.15s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.showcase-slide-bottom {
+  animation: slideInBottom 1.15s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.showcase-slide-top {
+  animation: slideInTop 1.15s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Layout shift prevention for Showcase */
+#showcase-content {
+  min-height: 520px;
+  contain: layout;
+}
+
+@media (min-width: 768px) {
+  #showcase-content {
+    min-height: 580px;
+  }
+}
+
+

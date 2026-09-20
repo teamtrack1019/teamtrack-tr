@@ -61,6 +61,11 @@ const translations = {
     tabLogistik: "4. Logistik & Touren",
     tabFuhrpark: "5. Fuhrpark & Material",
     tabWebsite: "6. Webseiten & Portale",
+    barTabZeiterfassung: "1. Zeiterfassung",
+    barTabRechnungen: "2. Rechnungen",
+    barTabCrm: "3. CRM",
+    barTabLogistik: "4. Logistik",
+    barTabFuhrpark: "5. Fuhrpark",
     barTabWebsite: "6. Webseiten",
     variantPrompt: "Modell-Variante wählen (A, B, C):",
     ctaSubPrompt: "Gefällt Ihnen die Demo? Lassen Sie uns Ihre eigene Firmen-WebApp besprechen:",
@@ -96,7 +101,7 @@ const translations = {
     calcBadge: "ROI & Einspar-Rechner",
     calcTitle: "Was bringt Ihnen eine individuelle Digitalisierung?",
     calcSub: "Berechnen Sie die Zeit- und Kostenersparnis durch automatisierte Web-Prozesse.",
-    calcWorkersLabel: "Anzahl Mitarbeiter / Fahrer / Monteure:",
+    calcWorkersLabel: "Anzahl Mitarbeiter:",
     calcRateLabel: "Durchschnittlicher Stundensatz (€):",
     calcFact1: "Durchschnittlich ~4,5 Stunden manuelle Büroarbeit pro Mitarbeiter eingespart",
     calcFact2: "Rechnungen & Freigaben erfolgen tagesaktuell ohne Verzögerung",
@@ -184,7 +189,9 @@ const translations = {
     legalTabKontakt: "Kontakt & Beratung",
     legalModalTitle: "Rechtliche Hinweise & Datenschutz",
     legalModalClose: "Schließen",
-    legalModalStand: "Stand: September 2026 • DSGVO- & DDG-konform"
+    legalModalStand: "Stand: September 2026 • DSGVO- & DDG-konform",
+    autoplayActive: "Auto-Tour: Aktiv",
+    autoplayPaused: "Auto-Tour: Pausiert"
   },
   tr: {
     topBanner: "İşletmelere Özel B2B Web Uygulamaları, Lojistik & Dijital Dönüşüm – %100 Talebinize Özel!",
@@ -246,6 +253,11 @@ const translations = {
     tabLogistik: "4. Lojistik & Rota",
     tabFuhrpark: "5. Filo & Depo/Malzeme",
     tabWebsite: "6. Web Siteleri & Portallar",
+    barTabZeiterfassung: "1. Saat Takibi",
+    barTabRechnungen: "2. Faturalar",
+    barTabCrm: "3. CRM",
+    barTabLogistik: "4. Lojistik",
+    barTabFuhrpark: "5. Filo & Araç",
     barTabWebsite: "6. Web Siteleri",
     variantPrompt: "Model Varyasyonu Seçin (A, B, C):",
     ctaSubPrompt: "Demoyu beğendiniz mi? Firmanıza özel web yazılımını birlikte planlayalım:",
@@ -281,7 +293,7 @@ const translations = {
     calcBadge: "Tasarruf & ROI Hesaplayıcı",
     calcTitle: "Özel Yazılım İşletmenize Ne Kazandırır?",
     calcSub: "Manuel süreçleri web otomasyonuna geçirerek elde edeceğiniz zaman ve maliyet kazancını hesaplayın.",
-    calcWorkersLabel: "Saha Elemanı / Şoför / Usta Sayısı:",
+    calcWorkersLabel: "Çalışan Sayısı:",
     calcRateLabel: "Ortalama Saatlik Maliyet / Ücret (€):",
     calcFact1: "Çalışan başına ayda ortalama ~4.5 saat gereksiz evrak işi tasarrufu",
     calcFact2: "Faturalar ve iş onayları beklemeden aynı gün hazırlanır",
@@ -369,7 +381,9 @@ const translations = {
     legalTabKontakt: "İletişim & Danışmanlık",
     legalModalTitle: "Yasal Bildirimler & Gizlilik Politikası",
     legalModalClose: "Kapat",
-    legalModalStand: "Güncelleme: Eylül 2026 • KVKK, DSGVO & DDG Uyumlu"
+    legalModalStand: "Güncelleme: Eylül 2026 • KVKK, DSGVO & DDG Uyumlu",
+    autoplayActive: "Otomatik Tur: Açık",
+    autoplayPaused: "Otomatik Tur: Duraklatıldı"
   },
   en: {
     topBanner: "Tailored B2B WebApps & Cloud Software for Logistics, Industry & Crafts – 100% Customized!",
@@ -431,6 +445,11 @@ const translations = {
     tabLogistik: "4. Logistics & Tours",
     tabFuhrpark: "5. Fleet & Inventory",
     tabWebsite: "6. Modern Websites & Portals",
+    barTabZeiterfassung: "1. Time Tracking",
+    barTabRechnungen: "2. Invoices",
+    barTabCrm: "3. CRM",
+    barTabLogistik: "4. Logistics",
+    barTabFuhrpark: "5. Fleet",
     barTabWebsite: "6. Websites",
     variantPrompt: "Choose Model Variation (A, B, C):",
     ctaSubPrompt: "Like what you see? Let's engineer your company's custom software:",
@@ -466,7 +485,7 @@ const translations = {
     calcBadge: "ROI & Cost-Saving Calculator",
     calcTitle: "What Value Does Custom Automation Deliver?",
     calcSub: "Estimate the time and financial savings achievable through tailored web workflows.",
-    calcWorkersLabel: "Number of employees / drivers / technicians:",
+    calcWorkersLabel: "Number of Employees:",
     calcRateLabel: "Average hourly billing rate (€):",
     calcFact1: "Average ~4.5 hours of manual administration saved per worker every month",
     calcFact2: "Invoices and job sign-offs completed on the same day without delays",
@@ -553,11 +572,13 @@ const translations = {
     legalTabKontakt: "Contact & Direct Line",
     legalModalTitle: "Legal Notice & Privacy Policy",
     legalModalClose: "Close",
-    legalModalStand: "As of September 2026 • GDPR & DDG Compliant"
+    legalModalStand: "As of September 2026 • GDPR & DDG Compliant",
+    autoplayActive: "Auto-Tour: Active",
+    autoplayPaused: "Auto-Tour: Paused"
   }
 };
 
-let currentLang = 'tr';
+let currentLang = 'de';
 let currentTab = 'zeiterfassung';
 let currentVariant = 0; // 0 for A, 1 for B, 2 for C
 let stempelSubMode = 'craft'; // 'craft' | 'lkw'
@@ -2328,10 +2349,116 @@ const showcaseData = {
   }
 };
 
-function switchShowcaseTab(tabName) {
+// --- AUTO-TOUR / AUTOPLAY ENGINE ---
+let isAutoplayRunning = true;
+let isUserInteracting = false;
+let isElementVisible = true;
+let autoplayTimer = null;
+let userInteractionTimeout = null;
+const allShowcaseTabs = ['zeiterfassung', 'rechnungen', 'crm', 'logistik', 'fuhrpark', 'website'];
+const AUTOPLAY_INTERVAL = 8000; // 8.0 seconds per variant (slow, relaxed & easy to read)
+
+function startShowcaseAutoplay() {
+  stopShowcaseAutoplay();
+  autoplayTimer = setInterval(() => {
+    if (!isAutoplayRunning || isUserInteracting || !isElementVisible) return;
+    advanceShowcaseAuto();
+  }, AUTOPLAY_INTERVAL);
+}
+
+function stopShowcaseAutoplay() {
+  if (autoplayTimer) {
+    clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+}
+
+function advanceShowcaseAuto() {
+  const moduleData = showcaseData[currentTab];
+  const totalVariants = (moduleData && moduleData.variants) ? moduleData.variants.length : 3;
+
+  if (currentVariant + 1 < totalVariants) {
+    // Switch to next variant in same module (A -> B, B -> C)
+    switchShowcaseVariant(currentVariant + 1, false);
+  } else {
+    // Last variant reached -> move to next module, variant 0 (A)
+    const curIndex = allShowcaseTabs.indexOf(currentTab);
+    const nextTab = allShowcaseTabs[(curIndex + 1) % allShowcaseTabs.length];
+    switchShowcaseTab(nextTab, 0, false);
+  }
+}
+
+function pauseAutoplayTemporarily(durationMs = 12000) {
+  isUserInteracting = true;
+  updateAutoplayUI();
+  if (userInteractionTimeout) clearTimeout(userInteractionTimeout);
+  userInteractionTimeout = setTimeout(() => {
+    isUserInteracting = false;
+    updateAutoplayUI();
+  }, durationMs);
+}
+
+function toggleAutoplayManual() {
+  isAutoplayRunning = !isAutoplayRunning;
+  if (isAutoplayRunning) {
+    isUserInteracting = false;
+    startShowcaseAutoplay();
+  }
+  updateAutoplayUI();
+}
+
+function updateAutoplayUI() {
+  const btn = document.getElementById('autoplay-toggle-btn');
+  const icon = document.getElementById('autoplay-icon');
+  const label = document.getElementById('autoplay-label');
+  if (!btn || !label) return;
+
+  const isPaused = !isAutoplayRunning || isUserInteracting;
+  const activeText = (translations[currentLang] && translations[currentLang].autoplayActive) ? translations[currentLang].autoplayActive : "Auto-Tour: Aktiv";
+  const pausedText = (translations[currentLang] && translations[currentLang].autoplayPaused) ? translations[currentLang].autoplayPaused : "Auto-Tour: Pausiert";
+
+  if (isPaused) {
+    label.textContent = pausedText;
+    btn.className = "flex items-center gap-1.5 text-amber-300 bg-amber-950/80 hover:bg-amber-900/90 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg border border-amber-700/60 text-[10px] sm:text-xs transition cursor-pointer";
+    if (icon) {
+      icon.setAttribute('data-lucide', 'play');
+      icon.className = "w-3 h-3 text-amber-400";
+    }
+  } else {
+    label.textContent = activeText;
+    btn.className = "flex items-center gap-1.5 text-cyan-300 bg-cyan-950/80 hover:bg-cyan-900/90 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg border border-cyan-700/60 text-[10px] sm:text-xs transition cursor-pointer";
+    if (icon) {
+      icon.setAttribute('data-lucide', 'pause');
+      icon.className = "w-3 h-3 text-cyan-400";
+    }
+  }
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+}
+
+let currentTransitionClass = 'showcase-animated';
+const slideDirections = ['showcase-slide-right', 'showcase-slide-left', 'showcase-slide-bottom', 'showcase-slide-top'];
+let slideDirectionIndex = 0;
+
+function switchShowcaseTab(tabName, variantIndex = 0, isManual = false) {
   if (!showcaseData[tabName]) return;
+  
+  // If moving to a different module, use dynamic directional slide!
+  if (currentTab !== tabName) {
+    currentTransitionClass = slideDirections[slideDirectionIndex % slideDirections.length];
+    slideDirectionIndex++;
+  } else {
+    currentTransitionClass = 'showcase-animated';
+  }
+
   currentTab = tabName;
-  currentVariant = 0; // Default to Variant A
+  currentVariant = variantIndex;
+
+  if (isManual) {
+    pauseAutoplayTemporarily(12000);
+  }
 
   // Update Hero module tabs
   const allTabs = ['zeiterfassung', 'rechnungen', 'crm', 'logistik', 'fuhrpark', 'website'];
@@ -2341,17 +2468,17 @@ function switchShowcaseTab(tabName) {
     
     if (heroBtn) {
       if (t === tabName) {
-        heroBtn.className = "hero-module-btn px-4 py-2 rounded-xl border text-xs sm:text-sm font-bold transition-all shadow-sm flex items-center gap-2 bg-cyan-600 text-white border-cyan-600 shadow-cyan-600/20 scale-105";
+        heroBtn.className = "hero-module-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl border text-xs sm:text-sm font-bold transition-all shadow-sm flex items-center gap-1.5 sm:gap-2 bg-cyan-600 text-white border-cyan-600 shadow-cyan-600/20 scale-105";
       } else {
-        heroBtn.className = "hero-module-btn px-4 py-2 rounded-xl border text-xs sm:text-sm font-bold transition-all shadow-sm flex items-center gap-2 bg-white text-slate-700 border-slate-300 hover:border-cyan-400 hover:text-cyan-700";
+        heroBtn.className = "hero-module-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl border text-xs sm:text-sm font-bold transition-all shadow-sm flex items-center gap-1.5 sm:gap-2 bg-white text-slate-700 border-slate-300 hover:border-cyan-400 hover:text-cyan-700";
       }
     }
 
     if (barBtn) {
       if (t === tabName) {
-        barBtn.className = "px-2.5 sm:px-3 py-1.5 rounded-lg bg-cyan-600 text-white font-bold transition";
+        barBtn.className = "px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-cyan-600 text-white font-bold transition";
       } else {
-        barBtn.className = "px-2.5 sm:px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition";
+        barBtn.className = "px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-slate-300 hover:text-white transition";
       }
     }
   });
@@ -2384,7 +2511,7 @@ function renderVariantButtons() {
       : "bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700 hover:border-cyan-500/50 px-2.5 sm:px-3.5 py-1.5 sm:py-2 font-bold";
     
     html += `
-      <button type="button" onclick="switchShowcaseVariant(${idx})" class="rounded-xl text-[11px] sm:text-xs md:text-sm transition-all duration-200 flex items-center gap-1.5 sm:gap-2 ${activeClass}">
+      <button type="button" onclick="switchShowcaseVariant(${idx}, true)" class="rounded-xl text-[11px] sm:text-xs md:text-sm transition-all duration-200 flex items-center gap-1.5 sm:gap-2 ${activeClass}">
         <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full ${isActive ? 'bg-white text-slate-900' : 'bg-slate-800 text-cyan-400'} font-black text-[10px] sm:text-xs flex items-center justify-center flex-shrink-0">${v.badge}</span>
         <span class="truncate">${name}</span>
       </button>
@@ -2394,10 +2521,17 @@ function renderVariantButtons() {
   container.innerHTML = html;
 }
 
-function switchShowcaseVariant(variantIndex) {
+function switchShowcaseVariant(variantIndex, isManual = false) {
   const moduleData = showcaseData[currentTab];
   if (!moduleData || !moduleData.variants[variantIndex]) return;
+  
+  // Variants inside same module keep the clean soft fade transition
+  currentTransitionClass = 'showcase-animated';
   currentVariant = variantIndex;
+
+  if (isManual) {
+    pauseAutoplayTemporarily(12000);
+  }
 
   renderVariantButtons();
   renderShowcaseContent();
@@ -2415,10 +2549,13 @@ function renderShowcaseContent() {
     urlEl.textContent = variant.url;
   }
 
-  // Render HTML
+  // Render HTML with dynamic animation (slide for modules, fade for variants)
   const contentContainer = document.getElementById('showcase-content');
   if (contentContainer) {
+    contentContainer.classList.remove('showcase-animated', 'showcase-slide-right', 'showcase-slide-left', 'showcase-slide-bottom', 'showcase-slide-top');
+    void contentContainer.offsetWidth; // Trigger reflow for animation restart
     contentContainer.innerHTML = variant.render(currentLang);
+    contentContainer.classList.add(currentTransitionClass);
   }
 
   if (window.lucide) {
@@ -2457,6 +2594,8 @@ function changeLanguage(lang) {
 
   // Update showcase
   switchShowcaseTab(currentTab);
+  updateAutoplayUI();
+  updateCalculator();
 
   // Update legal modal if open
   const modal = document.getElementById('legal-modal');
@@ -2587,6 +2726,12 @@ async function handleContactSubmit(e) {
   }
 }
 
+// --- INTERACTIVE ROI CALCULATOR & LIVE SIMULATION ---
+let isCalcAutoPlaying = true;
+let calcAnimTimer = null;
+let calcStep = 0;
+let isCalcVisible = false;
+
 function updateCalculator() {
   const workersInput = document.getElementById('calc-workers');
   const rateInput = document.getElementById('calc-rate');
@@ -2612,6 +2757,34 @@ function updateCalculator() {
   }
   if (totalHours) {
     totalHours.textContent = totalSavedHours.toLocaleString() + (currentLang === 'tr' ? ' Saat / Yıl' : (currentLang === 'en' ? ' Hrs / Year' : ' Std / Jahr'));
+  }
+}
+
+function startCalculatorAnimation() {
+  if (!isCalcAutoPlaying || calcAnimTimer) return;
+  calcAnimTimer = setInterval(() => {
+    if (!isCalcAutoPlaying || !isCalcVisible) return;
+    calcStep += 0.04;
+    const workersInput = document.getElementById('calc-workers');
+    const rateInput = document.getElementById('calc-rate');
+    if (workersInput && rateInput) {
+      // Workers oscillates smoothly between 8 and 28
+      const dynamicWorkers = Math.round(18 + Math.sin(calcStep) * 10);
+      // Rate oscillates smoothly between 45 and 85 in steps of 5
+      const dynamicRate = Math.round((65 + Math.sin(calcStep * 0.75 + 1.2) * 20) / 5) * 5;
+      
+      workersInput.value = dynamicWorkers;
+      rateInput.value = dynamicRate;
+      updateCalculator();
+    }
+  }, 100);
+}
+
+function stopCalculatorAnimation() {
+  isCalcAutoPlaying = false;
+  if (calcAnimTimer) {
+    clearInterval(calcAnimTimer);
+    calcAnimTimer = null;
   }
 }
 
@@ -3542,14 +3715,70 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   }
 
-  const savedLang = localStorage.getItem('teamtrack_lang') || 'tr';
-  changeLanguage(savedLang);
+  const hostname = window.location.hostname.toLowerCase();
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramLang = urlParams.get('lang');
+
+  let initialLang = 'de';
+  if (paramLang && ['de', 'tr', 'en'].includes(paramLang)) {
+    initialLang = paramLang;
+  } else if (hostname.startsWith('tr.') || hostname.includes('tr.team-track')) {
+    initialLang = 'tr';
+  } else if (hostname.startsWith('en.') || hostname.includes('en.team-track')) {
+    initialLang = 'en';
+  } else {
+    initialLang = localStorage.getItem('teamtrack_lang') || 'de';
+  }
+
+  changeLanguage(initialLang);
 
   const workersInput = document.getElementById('calc-workers');
   const rateInput = document.getElementById('calc-rate');
-  if (workersInput) workersInput.addEventListener('input', updateCalculator);
-  if (rateInput) rateInput.addEventListener('input', updateCalculator);
+
+  const onUserTouchCalculator = () => {
+    stopCalculatorAnimation();
+  };
+
+  if (workersInput) {
+    workersInput.addEventListener('input', () => {
+      stopCalculatorAnimation();
+      updateCalculator();
+    });
+    workersInput.addEventListener('mousedown', onUserTouchCalculator);
+    workersInput.addEventListener('touchstart', onUserTouchCalculator, { passive: true });
+    workersInput.addEventListener('pointerdown', onUserTouchCalculator);
+  }
+
+  if (rateInput) {
+    rateInput.addEventListener('input', () => {
+      stopCalculatorAnimation();
+      updateCalculator();
+    });
+    rateInput.addEventListener('mousedown', onUserTouchCalculator);
+    rateInput.addEventListener('touchstart', onUserTouchCalculator, { passive: true });
+    rateInput.addEventListener('pointerdown', onUserTouchCalculator);
+  }
+
   updateCalculator();
+
+  // Observer for calculator section auto-simulation
+  const calcSection = document.getElementById('calculator');
+  if (calcSection && 'IntersectionObserver' in window) {
+    const calcObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isCalcVisible = entry.isIntersecting;
+        if (isCalcVisible && isCalcAutoPlaying) {
+          startCalculatorAnimation();
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+    calcObserver.observe(calcSection);
+  } else {
+    isCalcVisible = true;
+    startCalculatorAnimation();
+  }
 
   // Live timer tick simulator
   let seconds = 17;
@@ -3573,6 +3802,23 @@ document.addEventListener('DOMContentLoaded', () => {
       timerEl.textContent = `${hStr}:${mStr}:${sStr}`;
     }
   }, 1000);
+
+  // Initialize Showcase Auto-Tour
+  startShowcaseAutoplay();
+  updateAutoplayUI();
+
+  // Pause autoplay when showcase is scrolled out of view to eliminate page jumping
+  const showcaseEl = document.getElementById('showcase');
+  if (showcaseEl && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isElementVisible = entry.isIntersecting;
+      });
+    }, {
+      threshold: 0.15
+    });
+    observer.observe(showcaseEl);
+  }
 
   // Check if redirected from form submission (#danke)
   if (window.location.hash === '#danke') {
