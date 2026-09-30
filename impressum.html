@@ -52,11 +52,10 @@
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/fonts/inter.css?v=7.2">
+  <script src="/assets/vendor/tailwindcss.js?v=7.2"></script>
+  <script src="/assets/vendor/lucide.min.js?v=7.2"></script>
+  <link rel="stylesheet" href="/styles.css?v=7.2">
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-white">
 
@@ -202,9 +201,18 @@
           <i data-lucide="file-badge" class="w-4 h-4 text-cyan-400"></i>
           Mesleki ve Vergi Bilgileri
         </h2>
-        <p><strong>Mesleki Ünvan:</strong> Serbest B2B Yazılım Geliştirici &amp; IT Danışmanı (Freiberuflicher Softwareentwickler &amp; IT-Berater - Almanya Federal Cumhuriyeti).</p>
-        <p><strong>Vergilendirme:</strong> Alman KDV Kanunu § 19 UStG uyarınca yürütülmektedir.</p>
-        <p><strong>Telif Hakları:</strong> TeamTrack web sitesinde yer alan tüm yazılım tasarımları, arayüzler, kodlar ve görsel içerikler Huriye Ünalsoy mülkiyetindedir.</p>
+        <p><strong>Vergi:</strong> Alman KDV Kanunu § 19 UStG (küçük işletme düzenlemesi) uyarınca KDV hesaplanmaz; KDV kimlik numarası tahsis edildiğinde belirtilir.</p>
+        <p><strong>Faaliyet alanı:</strong> Serbest yazılım geliştirme ve IT danışmanlığı (Freiberuflicher Softwareentwickler &amp; IT-Berater).</p>
+      </div>
+
+      <!-- UYUŞMAZLIK ÇÖZÜMÜ -->
+      <div class="p-6 bg-slate-900/80 border border-slate-800 rounded-2xl space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <h2 class="text-base font-bold text-white flex items-center gap-2">
+          <i data-lucide="scale" class="w-4 h-4 text-cyan-400"></i>
+          Uyuşmazlık Çözümü
+        </h2>
+        <p>Avrupa Komisyonu çevrimiçi uyuşmazlık çözümü (OS) platformu sunar: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">https://ec.europa.eu/consumers/odr/</a>.</p>
+        <p>Tüketici tahkim kurulunda uyuşmazlık çözümüne katılmakla yükümlü değiliz ve buna hazır değiliz (§ 36 VSBG).</p>
       </div>
 
       <!-- CTA BUTTON -->
