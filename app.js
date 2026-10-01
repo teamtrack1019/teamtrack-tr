@@ -2880,7 +2880,12 @@ function openShowcaseModule(tabName) {
 function openWhatsappDemo(event) {
   if (event) event.preventDefault();
   closeNavMenu();
-  const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'de';
+  const hostname = (window.location.hostname || '').toLowerCase();
+  let lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'de';
+  // On the Turkish market site, keep WhatsApp demo in TR (TRY prices) unless EN is explicit
+  if ((hostname.startsWith('tr.') || hostname.includes('tr.team-track')) && lang !== 'en') {
+    lang = 'tr';
+  }
   window.location.href = '/demos/whatsapp-termin/?lang=' + encodeURIComponent(lang);
 }
 

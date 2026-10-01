@@ -7,6 +7,12 @@
       const q = new URLSearchParams(location.search).get("lang");
       if (q && ["de", "tr", "en"].includes(q)) return q;
     } catch (_) {}
+    // Market subdomain wins over stored prefs (tr.team-track.de → Turkish + TRY prices)
+    try {
+      const host = (location.hostname || "").toLowerCase();
+      if (host.startsWith("tr.") || host.includes("tr.team-track")) return "tr";
+      if (host.startsWith("en.") || host.includes("en.team-track")) return "en";
+    } catch (_) {}
     try {
       const stored = localStorage.getItem("teamtrack_lang");
       if (stored && ["de", "tr", "en"].includes(stored)) return stored;
