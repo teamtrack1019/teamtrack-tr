@@ -6,6 +6,16 @@ const translations = {
     topBannerLink: "Erstgespräch anfragen →",
     logoSub: "B2B Softwareentwickler & IT-Berater",
     navMenuBtn: "Menü",
+    navWhatWeDo: "Was wir machen",
+    navWhatWeDoSub: "Module & Lösungen",
+    navModZeiterfassung: "Zeiterfassung",
+    navModRechnungen: "Rechnungen",
+    navModCrm: "CRM",
+    navModLogistik: "Logistik",
+    navModFuhrpark: "Fuhrpark",
+    navModWebsite: "Webseiten",
+    navModWhatsappTermin: "WhatsApp Terminbuchung",
+    moduleVollbildClose: "Schließen",
     navServicesSub: "WebApps, CRM, Schnittstellen",
     navShowcaseSub: "Interaktive Demo & Varianten",
     navWorkflowSub: "In 4 Schritten zur Software",
@@ -200,6 +210,16 @@ const translations = {
     topBannerLink: "Ön Görüşme İsteyin →",
     logoSub: "B2B Yazılım Geliştirici & IT Danışmanı",
     navMenuBtn: "Menü",
+    navWhatWeDo: "Neler yapıyoruz",
+    navWhatWeDoSub: "Modüller & çözümler",
+    navModZeiterfassung: "Saat Takibi",
+    navModRechnungen: "Faturalar",
+    navModCrm: "CRM",
+    navModLogistik: "Lojistik",
+    navModFuhrpark: "Filo & Araç",
+    navModWebsite: "Web Siteleri",
+    navModWhatsappTermin: "WhatsApp Randevu",
+    moduleVollbildClose: "Kapat",
     navServicesSub: "Web Uygulamaları, CRM, Entegrasyon",
     navShowcaseSub: "İnteraktif Demo & Varyantlar",
     navWorkflowSub: "4 Adımda Yazılım Geliştirme",
@@ -394,6 +414,16 @@ const translations = {
     topBannerLink: "Request Intro Call →",
     logoSub: "B2B Software Engineer & IT Consultant",
     navMenuBtn: "Menu",
+    navWhatWeDo: "What we do",
+    navWhatWeDoSub: "Modules & solutions",
+    navModZeiterfassung: "Time Tracking",
+    navModRechnungen: "Invoices",
+    navModCrm: "CRM",
+    navModLogistik: "Logistics",
+    navModFuhrpark: "Fleet",
+    navModWebsite: "Websites",
+    navModWhatsappTermin: "WhatsApp Booking",
+    moduleVollbildClose: "Close",
     navServicesSub: "WebApps, CRM, API Integration",
     navShowcaseSub: "Interactive Demo & Variants",
     navWorkflowSub: "4 Steps to Custom Software",
@@ -2603,6 +2633,12 @@ function changeLanguage(lang) {
   updateAutoplayUI();
   updateCalculator();
 
+  // Update module Vollbild if open
+  const vollbild = document.getElementById('module-vollbild');
+  if (vollbild && !vollbild.classList.contains('hidden') && moduleVollbildTab) {
+    renderModuleVollbild();
+  }
+
   // Update legal modal if open
   const modal = document.getElementById('legal-modal');
   if (modal && !modal.classList.contains('hidden')) {
@@ -2816,6 +2852,114 @@ function closeNavMenu() {
   if (dropdown) dropdown.classList.add('hidden');
   if (chevron) chevron.classList.remove('rotate-180');
 }
+
+function toggleWhatWeDoMenu() {
+  const submenu = document.getElementById('nav-whatwedo-submenu');
+  const chevron = document.getElementById('nav-whatwedo-chevron');
+  if (!submenu) return;
+  const isHidden = submenu.classList.contains('hidden');
+  if (isHidden) {
+    submenu.classList.remove('hidden');
+    if (chevron) chevron.classList.add('rotate-180');
+  } else {
+    submenu.classList.add('hidden');
+    if (chevron) chevron.classList.remove('rotate-180');
+  }
+}
+
+function openShowcaseModule(tabName) {
+  closeNavMenu();
+  if (!showcaseData[tabName]) return;
+  // Keep page showcase in sync, then open true Vollbild overlay
+  if (typeof switchShowcaseTab === 'function') {
+    switchShowcaseTab(tabName, 0, true);
+  }
+  openModuleVollbild(tabName);
+}
+
+function openWhatsappDemo(event) {
+  if (event) event.preventDefault();
+  closeNavMenu();
+  const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'de';
+  window.location.href = '/demos/whatsapp-termin/?lang=' + encodeURIComponent(lang);
+}
+
+let moduleVollbildTab = null;
+let moduleVollbildVariant = 0;
+
+function openModuleVollbild(tabName) {
+  const overlay = document.getElementById('module-vollbild');
+  if (!overlay || !showcaseData[tabName]) return;
+
+  moduleVollbildTab = tabName;
+  moduleVollbildVariant = 0;
+  overlay.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  renderModuleVollbild();
+
+  if (window.lucide) lucide.createIcons();
+}
+
+function closeModuleVollbild() {
+  const overlay = document.getElementById('module-vollbild');
+  if (overlay) overlay.classList.add('hidden');
+  document.body.style.overflow = '';
+  moduleVollbildTab = null;
+}
+
+function switchModuleVollbildVariant(variantIndex) {
+  if (!moduleVollbildTab || !showcaseData[moduleVollbildTab]) return;
+  const variants = showcaseData[moduleVollbildTab].variants || [];
+  if (!variants[variantIndex]) return;
+  moduleVollbildVariant = variantIndex;
+  renderModuleVollbild();
+}
+
+function renderModuleVollbild() {
+  const moduleData = showcaseData[moduleVollbildTab];
+  if (!moduleData) return;
+
+  const titleEl = document.getElementById('module-vollbild-title');
+  if (titleEl && moduleData.title) {
+    titleEl.textContent = moduleData.title[currentLang] || moduleData.title.de || '';
+  }
+
+  const variants = moduleData.variants || [];
+  const variant = variants[moduleVollbildVariant] || variants[0];
+
+  const renderVariantButtons = (container) => {
+    if (!container) return;
+    if (variants.length <= 1) {
+      container.innerHTML = '';
+      return;
+    }
+    container.innerHTML = variants.map((v, idx) => {
+      const active = idx === moduleVollbildVariant;
+      const label = (v.name && (v.name[currentLang] || v.name.de)) || v.badge || String(idx + 1);
+      const short = v.badge || String.fromCharCode(65 + idx);
+      return `<button type="button" onclick="switchModuleVollbildVariant(${idx})" class="px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition whitespace-nowrap ${active ? 'bg-cyan-600 text-white' : 'text-slate-300 hover:text-white hover:bg-slate-800'}">${short}<span class="hidden lg:inline"> · ${label}</span></button>`;
+    }).join('');
+  };
+
+  renderVariantButtons(document.getElementById('module-vollbild-variants'));
+  renderVariantButtons(document.getElementById('module-vollbild-variants-mobile'));
+
+  const content = document.getElementById('module-vollbild-content');
+  if (content && variant && typeof variant.render === 'function') {
+    content.innerHTML = variant.render(currentLang);
+  }
+
+  if (window.lucide) lucide.createIcons();
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const overlay = document.getElementById('module-vollbild');
+    if (overlay && !overlay.classList.contains('hidden')) {
+      closeModuleVollbild();
+    }
+  }
+});
 
 // Close dropdown if clicked outside
 document.addEventListener('click', (e) => {
